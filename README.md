@@ -12,7 +12,8 @@
 文件路径src->main->resources->application.properties文件
 
 本项目使用的mysql数据库
-需要更改配置文件的数据库名和登陆登陆信息
+
+需要更改配置文件的数据库名和登陆登陆信息如下：
 ```
 server.port=8080
 
