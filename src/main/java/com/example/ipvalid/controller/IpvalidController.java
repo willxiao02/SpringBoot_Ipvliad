@@ -35,11 +35,11 @@ public class IpvalidController {
         IPUtils ipUtils = new IPUtils();
         if (!ipUtils.isIP(ip))
         {
-            return "ip 输入有误";
+            return "ip format not correct";
         }
         status=status.toUpperCase().trim();
         if(!STATUSLIST.contains(status)){
-            return "状态数据接收异常,The status could be one of the following:\n" +
+            return "status error,The status could be one of the following:\n" +
                     "STOPPED, BOOTING, STARTED.";
         }
         switch (status){
@@ -58,7 +58,7 @@ public class IpvalidController {
 
         }
         catch(Exception e){
-            return "添加异常"+e.toString();
+            return "add record abend:"+e.toString();
         }
     }
 
@@ -96,11 +96,11 @@ public class IpvalidController {
             if(iiPvalidService.delete(id)){
                 return "delete successfully";
             }else {
-                return "删除异常";
+                return "delete error";
             }
 
         }catch(Exception e){
-            return "删除异常"+e.toString();
+            return "delete abend"+e.toString();
         }
     }
 
@@ -112,12 +112,12 @@ public class IpvalidController {
         IPUtils ipUtils=new IPUtils();
         if(!ipUtils.isIP(ip))
         {
-            return "输入IP有误";
+            return "ip format not correct";
         }
 
         status=status.toUpperCase().trim();
         if (!STATUSLIST.contains(status)){
-            return "状态数据异常,The status could be one of the following:\n" +
+            return "status error,The status could be one of the following:\n" +
                     "STOPPED, BOOTING, STARTED.";
         }
         switch (status){
@@ -139,7 +139,7 @@ public class IpvalidController {
             }
         }
         catch(Exception e){
-            return "更新异常"+e.toString();
+            return "update abend"+e.toString();
         }
 
     }
